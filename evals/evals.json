@@ -1,0 +1,20 @@
+{
+  "skill": "image-prompt-writer",
+  "test_cases": [
+    {
+      "name": "basic_change",
+      "input": "换",
+      "assertions": ["outputs one continuous Chinese paragraph prompt ~1500 chars", "sexy dressed", "looking at camera", "high-def natural light", "new person and style"]
+    },
+    {
+      "name": "specific_person",
+      "input": "换成王楚然，海边",
+      "assertions": ["uses name 王楚然", "sexy dressed", "seaside scene", "looking at camera"]
+    },
+    {
+      "name": "multi_panel",
+      "input": "九宫格，换",
+      "assertions": ["multi-panel structure", "consistency sentence", "per-panel descriptions", "same person across"]
+    }
+  ]
+}

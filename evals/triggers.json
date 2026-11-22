@@ -1,0 +1,9 @@
+{
+  "skill": "image-prompt-writer",
+  "test_cases": [
+    {"input": "换", "should_trigger": true},
+    {"input": "随便来一张", "should_trigger": true},
+    {"input": "出个提示词 海边美女", "should_trigger": true},
+    {"input": "今天天气怎么样", "should_trigger": false}
+  ]
+}

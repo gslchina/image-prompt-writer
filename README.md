@@ -1,50 +1,72 @@
 # image-prompt-writer
 
-Grok Skill for generating detailed, ready-to-use image prompts for MiniMax image-01 or similar text-to-image models.
+> Grok Skill for generating high-quality, detailed image prompts optimized for MiniMax image-01 and similar text-to-image models.
 
-## Features
+## Overview
 
-- **Target length**: ~1500 Chinese characters per prompt
-- **Default style**: Sexy dressed (revealing but clothed), Japanese-style high-definition natural light, looking at the camera naturally
-- **Large libraries** for maximum variety:
-  - 100 character templates (Chinese, Japanese, Korean, Western female protagonists, blendable)
-  - 60 high-definition artistic photography styles
-  - 200+ scenes (indoor/outdoor)
-  - 200+ sexy outfit variations
-  - 100+ actions/poses
-  - 50+ expressions
-  - 80+ camera positions & compositions
-- Supports real celebrity names (e.g. 王楚然)
-- Multi-panel support (九宫格 etc.)
+This skill produces single-paragraph Chinese prompts (~1400–1600 characters) with rich visual detail. It is designed for consistent artistic portrait generation while maximizing variety through large reference libraries.
+
+**Default locked elements:**
+- Sexy dressed (revealing but fully clothed)
+- Japanese-style high-definition natural light (golden soft light, sharp, no grain)
+- Subject looking at the camera with a natural expression
+
+Everything else (person, scene, outfit, pose, camera, style) is randomized on each “换” / “随便” / “继续”.
+
+## Key Features
+
+| Feature | Details |
+|---------|---------|
+| Prompt Length | ~1500 Chinese characters |
+| Character Library | 100 templates (CN/JP/KR/Western, blendable) |
+| Style Library | 60 high-def artistic styles |
+| Scene Library | 200+ indoor & outdoor locations |
+| Outfit Library | 200+ sexy dressed variations |
+| Action Library | 100+ poses |
+| Expression Library | 50+ natural expressions |
+| Camera Library | 80+ positions & compositions |
+| Real Names | Supported (e.g. 王楚然) |
+| Multi-panel | 九宫格 / storyboard support |
 
 ## Usage
 
-When using with Grok:
-- Say **“换”**, **“随便”**, or **“继续”** to generate a new random prompt with fresh person, scene, outfit, action, expression, camera, and style.
-- Specify a person (e.g. “王楚然”) or scene to override.
-- Say “九宫格” for multi-panel layouts.
+### Basic Commands
+- `换` / `随便` / `继续` — Generate a completely new prompt with randomized person, scene, outfit, action, expression, camera angle, and style.
+- `王楚然` — Force a specific person (uses real name + accurate visual traits).
+- `九宫格` — Output a multi-panel grid prompt.
 
-## Structure
+### Override Examples
+- `换，韩国的` — Random Korean character
+- `海边，黄昏` — Force seaside + golden hour
+- `完全不穿` — Override to full nude (only when explicitly requested)
+
+## Project Structure
 
 ```
 image-prompt-writer/
-├── SKILL.md
-├── CHANGELOG.md
-├── README.md
+├── SKILL.md                 # Core skill instructions
+├── CHANGELOG.md             # Version history
+├── README.md                # This file
 ├── evals/
-│   ├── evals.json
-│   └── triggers.json
-└── references/
-    ├── characters.md
-    ├── styles.md
-    ├── scenes.md
-    ├── outfits.md
-    ├── actions.md
-    ├── expressions.md
-    ├── cameras.md
-    └── multi-panel.md
+│   ├── evals.json           # Test cases
+│   └── triggers.json        # Trigger phrases
+└── references/               # Large libraries
+    ├── characters.md        # 100 character templates
+    ├── styles.md            # 60 photography styles
+    ├── scenes.md            # 200+ scenes
+    ├── outfits.md           # 200+ outfits
+    ├── actions.md           # 100+ poses
+    ├── expressions.md       # 50+ expressions
+    ├── cameras.md           # 80+ camera setups
+    └── multi-panel.md       # Grid / storyboard rules
 ```
+
+## Installation (for Grok)
+
+1. Clone or download this repository.
+2. Place the folder in your Grok skills directory (`.grok/skills/image-prompt-writer`).
+3. The skill will automatically trigger on relevant prompts.
 
 ## License
 
-For personal use with Grok / MiniMax image generation.
+Personal use. Optimized for Grok + MiniMax image generation workflows.
